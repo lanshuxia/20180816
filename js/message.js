@@ -22,6 +22,7 @@ $(function(){
 function videoCon(){
     //var videoPath = sessionStorage.getItem(videoPath);
     $('.video-img').attr('src',sessionStorage.videoPath);
+    console.log(sessionStorage.videoPath)
 }
 
 /*切换*/
