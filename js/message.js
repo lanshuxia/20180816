@@ -12,7 +12,6 @@ var deviceId = 867223025154659;
 var checkedDevices=[]; //存放设备号
 
 $(function(){
-    alert(1)
     videoCon()
     getLocation()
     extracted();
@@ -22,7 +21,11 @@ $(function(){
 
 function videoCon(){
     alert(sessionStorage.videoPath)
-    //var videoPath = sessionStorage.getItem(videoPath);
+        document.addEventListener("WeixinJSBridgeReady",function() {
+            document.getElementById('video-aa').play()
+        }, false);
+
+        //var videoPath = sessionStorage.getItem(videoPath);
         $('#video').attr('src',sessionStorage.videoPath);
     //console.log(sessionStorage.videoPath)
 }
