@@ -12,9 +12,9 @@ var deviceId = 867223025154659;
 var checkedDevices=[]; //存放设备号
 
 $(function(){
-    $('button').click(function(){
+/*    $('button').click(function(){
         videoCon()
-    })
+    })*/
     getLocation()
     extracted();
     getIndexData()
