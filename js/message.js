@@ -13,7 +13,7 @@ var checkedDevices=[]; //存放设备号
 
 $(function(){
     alert(1)
-    //videoCon()
+    videoCon()
     getLocation()
     extracted();
     getIndexData()
