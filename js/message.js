@@ -20,14 +20,26 @@ $(function(){
 })
 
 function videoCon(){
-    alert(sessionStorage.videoPath)
         document.addEventListener("WeixinJSBridgeReady",function() {
-            document.getElementById('video-aa').play()
+            document.getElementById('video-img').play()
         }, false);
-
-        //var videoPath = sessionStorage.getItem(videoPath);
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            var video = document.querySelector('#video');
+            var videobox = document.querySelector('.video-img');
+            //播放时改变外层包裹的宽度，使video宽度增加，
+            //相应高度也增加了,播放器控件被挤下去，配合overflow：hidden
+            //控件看不见也触摸不到了
+            function  setVideoStyle(){
+                videobox.style.width = '80%';
+                video.style.width = '100%';
+                videobox.style.display = 'block';
+            }
+            setVideoStyle()
+        }
         $('#video').attr('src',sessionStorage.videoPath);
-    //console.log(sessionStorage.videoPath)
 }
 
 /*切换*/

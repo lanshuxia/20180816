@@ -4,6 +4,15 @@ body,html,a,input,ul,li,dl,dd,dt,ol,form,p,h1,h2,h3,h4,h5,h6{
     list-style: none;
     font-family: '微软雅黑';
 }
+html,body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
 *{
     box-sizing: border-box;
 }
@@ -39,6 +48,7 @@ body,html,a,input,ul,li,dl,dd,dt,ol,form,p,h1,h2,h3,h4,h5,h6{
     width:100px;
     height:100px;
     display: block;
+    border:1px solid red;
 }
 /*投放设备*/
 .install-con{
