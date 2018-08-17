@@ -12,20 +12,19 @@ var deviceId = 867223025154659;
 var checkedDevices=[]; //存放设备号
 
 $(function(){
+    $('button').click(function(){
+        videoCon()
+    })
     getLocation()
     extracted();
     getIndexData()
     orderBtn()
-    videoCon()
 })
 
 function videoCon(){
     alert(sessionStorage.videoPath)
     //var videoPath = sessionStorage.getItem(videoPath);
-    setTimeout(function(){
         $('#aa').attr('src',sessionStorage.videoPath);
-    },300)
-
     //console.log(sessionStorage.videoPath)
 }
 
