@@ -28,6 +28,17 @@ function videoCon(){
         //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         if(isAndroid){
             $('#video-img').attr('controls','controls')
+            var video = document.querySelector('#video-img');
+            var videobox = document.querySelector('.video');
+            //播放时改变外层包裹的宽度，使video宽度增加，
+            //相应高度也增加了,播放器控件被挤下去，配合overflow：hidden
+            //控件看不见也触摸不到了
+            function  setVideoStyle(){
+                videobox.style.width = '50%';
+                video.style.width = '100%';
+                videobox.style.display = 'block';
+            }
+            setVideoStyle()
         }
         $('#video').attr('src',sessionStorage.videoPath);
 }
