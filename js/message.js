@@ -23,7 +23,7 @@ $(function(){
 function videoCon(){
     alert(sessionStorage.videoPath)
     //var videoPath = sessionStorage.getItem(videoPath);
-        $('#aa').attr('src',sessionStorage.videoPath);
+        $('#video').attr('src',sessionStorage.videoPath);
     //console.log(sessionStorage.videoPath)
 }
 
