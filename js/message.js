@@ -22,7 +22,10 @@ $(function(){
 function videoCon(){
     alert(sessionStorage.videoPath)
     //var videoPath = sessionStorage.getItem(videoPath);
-    $('.video-img').attr('src',sessionStorage.videoPath);
+    setTimeout(function(){
+        $('#aa').attr('src',sessionStorage.videoPath);
+    },300)
+
     //console.log(sessionStorage.videoPath)
 }
 
