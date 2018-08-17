@@ -164,9 +164,9 @@ function button(){
         if($('#video').attr('src') == ''){
             alert('您还没有上传视频，请上传视频！')
         }else{
-            //window.location.href = "message.html"
+            window.location.href = "message.html"
             //alert(1)
-            getIndexData();
+            //getIndexData();
         }
     })
 }
