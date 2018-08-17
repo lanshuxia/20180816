@@ -12,6 +12,7 @@ var deviceId = 867223025154659;
 var checkedDevices=[]; //存放设备号
 
 $(function(){
+    alert(1)
     //videoCon()
     getLocation()
     extracted();
