@@ -48,13 +48,8 @@ html,body {
     width:100px;
     height:100px;
     display: block;
-    overflow: hidden;
 }
-#video{
-    height: 100%;
-    display: block;
-    margin:0 auto;
-}
+
 /*投放设备*/
 .install-con{
     width:100%;
