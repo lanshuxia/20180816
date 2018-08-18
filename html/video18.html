@@ -1,38 +1,18 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-
-<input type="file" id="open-file" onchange="Get_FileUploadLocalPath(this)">
-
-//因js水平有限，不喜勿喷，全当没事看看,video是html5中的新控件，大家可以看看
-
-<script type="text/javascript">
-    function Get_FileUploadLocalPath(obj) {
-        alert(GetFileUploadLocalPath(obj));
-    }
-    //返回选取文件的本地路径
-    function GetFileUploadLocalPath(obj) {
-//alert(window.navigator.userAgent);
-        if (obj) {
-            if (window.navigator.userAgent.indexOf("MSIE") >= 1) {
-                obj.select();
-                var o = obj.createTextRange();
-//alert(o.text);
-                return o.text;
-            }
-            else if (window.navigator.userAgent.indexOf("Firefox") >= 1) {
-                if (obj.files) {
-                    return obj.files.item(0).getAsDataURL();
-                }
-                return obj.value;
-            }
-            return obj.value;
-        }
-    }
-</script>
+<video width="320" height="240" controls>
+    <source src="" type="video/mp4" id="video">
+</video>
 </body>
+<script>
+    $(function(){
+        $('#video').attr('src','../10mp4')
+    })
+</script>
 </html>
