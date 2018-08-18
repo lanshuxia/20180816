@@ -40,7 +40,7 @@ function videoCon(){
             }
             setVideoStyle()*/
         }
-        $('#video').attr('src','http://jiegui.oss-cn-shenzhen.aliyuncs.com/order/867223025154659/1066/201808142053466634.mp4');
+        $('#video').attr('src','http://jiegui.oss-cn-shenzhen.aliyuncs.com/order/867223025154659/1/201808181044044996.MPEG');
 }
 
 /*切换*/

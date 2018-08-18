@@ -147,8 +147,8 @@ function getIndexData() {
             if (data.status == 1) {//信息获取成功
                 layer.close( index );
                 //sessionStorage.setItem('videoPath',data.data.videoPath);
-                sessionStorage.videoPath = data.data.videoPath;
-                window.location.href = "message.html"
+           /*     sessionStorage.videoPath = data.data.videoPath;
+                window.location.href = "message.html"*/
             } else {
                 layer.close( index );
                 alert(data.msg);
@@ -164,9 +164,9 @@ function button(){
         if($('#video').attr('src') == ''){
             alert('您还没有上传视频，请上传视频！')
         }else{
-            window.location.href = "message.html"
+            //window.location.href = "message.html"
             //alert(1)
-            //getIndexData();
+            getIndexData();
         }
     })
 }
