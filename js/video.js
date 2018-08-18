@@ -6,6 +6,7 @@ var fileSize; //视频大小
 var duration; //视频的时长
 var videoDuration = 15; //选择的视频时15s 还是30s
 
+var src;
 $(function(){
     Init(); //初始化设置时长和大小
     tab(); //绑定tab切换
@@ -52,7 +53,8 @@ function video() {
         fileSize = this.files[0].size;
         var bases = fileSize/1024/1024;
         var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
-        sessionStorage.videoPath = objURL;
+        //sessionStorage.videoPath = objURL;
+        src = objURL;
         $('.video-img').css('display', 'none');
         $('#video').attr('src',objURL);
         setTimeout(function () {
@@ -164,7 +166,7 @@ function button(){
         if($('#video').attr('src') == ''){
             alert('您还没有上传视频，请上传视频！')
         }else{
-            window.location.href = "message.html"
+            window.location.href = "message.html?src="+src;
             //alert(1)
             //getIndexData();
         }
