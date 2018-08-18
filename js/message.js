@@ -23,6 +23,10 @@ function videoCon(){
         document.addEventListener("WeixinJSBridgeReady",function() {
             document.getElementById('video-img').play()
         }, false);
+        var src = sessionStorage.videoPath;
+        var sourceDom = $("<source src=\""+ src +"\">");
+        $('#video-img').append(sourceDom);
+
         var u = navigator.userAgent;
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -40,7 +44,8 @@ function videoCon(){
             }
             setVideoStyle()*/
         }
-        $('#video').attr('src','http://jiegui.oss-cn-shenzhen.aliyuncs.com/order/867223025154659/1/201808181044044996.MPEG');
+
+        //$('#video').attr('src','http://jiegui.oss-cn-shenzhen.aliyuncs.com/order/867223025154659/1/201808181044044996.MPEG');
 }
 
 /*切换*/
