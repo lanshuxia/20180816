@@ -34,7 +34,7 @@ function videoCon(){
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if(isAndroid){
         var video = document.querySelector('#video-img');
-        var videobox = document.querySelector('.divVideo');
+        var videobox = document.querySelector('#divVideo');
 
         //播放时改变外层包裹的宽度，使video宽度增加，
         //相应高度也增加了,播放器控件被挤下去，配合overflow：hidden
