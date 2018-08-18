@@ -24,9 +24,7 @@ function videoCon(){
             document.getElementById('video-img').play()
         }, false);
         var src = sessionStorage.videoPath;
- /*       var sourceDom = $("<source src=\""+ src +"\">");
-        $('#video-img').append(sourceDom);
-    */
+        alert(src)
         var videoImg = document.getElementById("video-img");
         var videoSource = document.getElementById("video");
         videoSource.src = src;
@@ -37,20 +35,7 @@ function videoCon(){
         //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         if(isAndroid){
             $('#video-img').attr('controls','controls')
-/*            var video = document.querySelector('#video-img');
-            var videobox = document.querySelector('.video');*/
-            //播放时改变外层包裹的宽度，使video宽度增加，
-            //相应高度也增加了,播放器控件被挤下去，配合overflow：hidden
-            //控件看不见也触摸不到了
-           /* function  setVideoStyle(){
-                videobox.style.width = '50%';
-                video.style.width = '100%';
-                videobox.style.display = 'block';
-            }
-            setVideoStyle()*/
         }
-
-        //$('#video').attr('src','http://jiegui.oss-cn-shenzhen.aliyuncs.com/order/867223025154659/1/201808181044044996.MPEG');
 }
 
 /*切换*/
