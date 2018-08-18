@@ -51,10 +51,12 @@ function video() {
 
         fileSize = this.files[0].size;
         var bases = fileSize/1024/1024;
-        var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
-        sessionStorage.videoPath = objURL;
+        var objUrl = GetFileUploadLocalPath(this);
+        console.log(objUrl)
+        //var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
+        sessionStorage.videoPath = objUrl;
         $('.video-img').css('display', 'none');
-        $('#video').attr('src',objURL);
+        $('#video').attr('src',objUrl);
         setTimeout(function () {
             if (document.getElementById('video')) {
                 duration = Math.floor(document.getElementById('video').duration);
@@ -105,8 +107,29 @@ function filePrevImg(d,m) {//只改变设置的参数大小,事件不需要重�
 	basem=m;
 }
 
+//返回选取文件的本地路径
+function GetFileUploadLocalPath(obj) {
+//alert(window.navigator.userAgent);
+    if (obj) {
+        if (window.navigator.userAgent.indexOf("MSIE") >= 1) {
+            obj.select();
+            var o = obj.createTextRange();
+//alert(o.text);
+            return o.text;
+        }
+        else if (window.navigator.userAgent.indexOf("Firefox") >= 1) {
+            if (obj.files) {
+                return obj.files.item(0).getAsDataURL();
+            }
+            return obj.value;
+        }
+        return obj.value;
+    }
+}
+
+
 //建立一個可存取到該file的url
-function getObjectURL(file) {
+/*function getObjectURL(file) {
     var url = null;
     if (window.createObjcectURL != undefined) {
         url = window.createOjcectURL(file);
@@ -116,7 +139,7 @@ function getObjectURL(file) {
         url = window.webkitURL.createObjectURL(file);
     }
     return url;
-}
+}*/
 
 //获取后台数据
 function getIndexData() {
