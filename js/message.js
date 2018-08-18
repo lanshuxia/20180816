@@ -28,7 +28,7 @@ function videoCon(){
     //var src = sessionStorage.videoPath;
     //var src = getUrlParam(src);
 
-    document.getElementById('video').src = src;
+    document.getElementById('video-img').src = src;
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
