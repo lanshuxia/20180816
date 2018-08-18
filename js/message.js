@@ -28,7 +28,7 @@ function videoCon(){
         var videoImg = document.getElementById("video-img");
         //var videoSource = document.getElementById("video");
 
-        var videoSource = '<source src="'+src+'" id="video">'
+        var videoSource = '<source src="../10.mp4" id="video">'
         videoImg.append(videoSource)
         //videoSource.attr = src;
         videoImg.play();
