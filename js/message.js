@@ -24,6 +24,7 @@ function videoCon(){
         document.getElementById('video-img').play()
     }, false);
     var src = sessionStorage.videoPath;
+    alert(src)
     document.getElementById('video').src = src;
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
