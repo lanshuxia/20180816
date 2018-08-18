@@ -11,9 +11,7 @@ var timeType = 1;
 var deviceId = 867223025154659;
 var checkedDevices=[]; //存放设备号
 
-var src;
 $(function(){
-    src = getUrlParam('src');
     videoCon()
     getLocation()
     extracted();
@@ -25,10 +23,10 @@ function videoCon(){
     document.addEventListener("WeixinJSBridgeReady",function() {
         document.getElementById('video-img').play()
     }, false);
-    //var src = sessionStorage.videoPath;
+    var src = sessionStorage.videoPath;
     //var src = getUrlParam(src);
 
-    document.getElementById('video-img').src = src;
+    $('#video-img').attr('src',src);
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -49,11 +47,11 @@ function videoCon(){
     }
 }
 
-function getUrlParam(name) {
+/*function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
-}
+}*/
 
 /*切换*/
 function extracted() {
