@@ -52,7 +52,7 @@ function video() {
         fileSize = this.files[0].size;
         var bases = fileSize/1024/1024;
         var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
-        sessionStorage.videoPath = objURL;
+        //sessionStorage.videoPath = objURL;
         $('.video-img').css('display', 'none');
         $('#video').attr('src',objURL);
         setTimeout(function () {
@@ -147,7 +147,7 @@ function getIndexData() {
             if (data.status == 1) {//信息获取成功
                 layer.close( index );
                 //sessionStorage.setItem('videoPath',data.data.videoPath);
-                //sessionStorage.videoPath = data.data.videoPath;
+                sessionStorage.videoPath = data.data.videoPath;
                 window.location.href = "message.html"
             } else {
                 layer.close( index );
