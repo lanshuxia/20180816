@@ -24,10 +24,15 @@ function videoCon(){
             document.getElementById('video-img').play()
         }, false);
         var src = sessionStorage.videoPath;
-        var sourceDom = $("<source src=\""+ src +"\">");
+ /*       var sourceDom = $("<source src=\""+ src +"\">");
         $('#video-img').append(sourceDom);
+    */
+        var videoImg = document.getElementById("video-img");
+        var videoSource = document.getElementById("video");
+        videoSource.src = src;
+        videoImg.play();
 
-        var u = navigator.userAgent;
+    var u = navigator.userAgent;
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         if(isAndroid){
