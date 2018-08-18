@@ -52,7 +52,7 @@ function video() {
         fileSize = this.files[0].size;
         var bases = fileSize/1024/1024;
         var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
-        //sessionStorage.videoPath = objURL;
+        sessionStorage.videoPath = objURL;
         $('.video-img').css('display', 'none');
         $('#video').attr('src',objURL);
         setTimeout(function () {
@@ -164,9 +164,9 @@ function button(){
         if($('#video').attr('src') == ''){
             alert('您还没有上传视频，请上传视频！')
         }else{
-            //window.location.href = "message.html"
+            window.location.href = "message.html"
             //alert(1)
-            getIndexData();
+            //getIndexData();
         }
     })
 }
