@@ -26,7 +26,8 @@ function videoCon(){
     var src = sessionStorage.videoPath;
     //var src = getUrlParam(src);
 
-    $('#video-img').attr('src',src);
+    document.getElementById('video-img').src = src;
+    //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -39,11 +40,9 @@ function videoCon(){
         //控件看不见也触摸不到了
         function setVideoStyle(){
             videobox.style.width = '100%';
-            videobox.style.left = '-10%';
             video.style.width = '100%';
         }
         setVideoStyle()
-        $('#video-img').attr('controls','controls');
     }
 }
 
