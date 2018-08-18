@@ -27,14 +27,15 @@ function videoCon(){
         alert(src)
         var videoImg = document.getElementById("video-img");
         var videoSource = document.getElementById("video");
-        videoSource.src = src;
+        videoSource.attr = src;
         videoImg.play();
 
     var u = navigator.userAgent;
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         if(isAndroid){
-            $('#video-img').attr('controls','controls')
+            $('#video-img').attr('controls','controls');
+            videoSource.attr('src',src);
         }
 }
 
