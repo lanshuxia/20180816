@@ -64,7 +64,7 @@ function videoCon(){
 //elemt为播放控件要插入的容器，src为视频文件地址，preload为预加载，autoplay是否页面进入就自动播放
 //poster为播放前的遮照图片，loop为是否循环播放，width和heigth默认100%
         elemt: document.getElementById("divVideo"),
-        src: 'http://jiegui.oss-cn-shenzhen.aliyuncs.com/order/867223025154659/1066/201808142053466634.mp4',
+        src: "http://jiegui.oss-cn-shenzhen.aliyuncs.com/order/867223025154659/1066/201808142053466634.mp4",
         preload: "true",
         autoplay: "true",
         poster: "",
