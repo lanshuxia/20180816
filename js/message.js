@@ -26,8 +26,11 @@ function videoCon(){
         var src = sessionStorage.videoPath;
         alert(src)
         var videoImg = document.getElementById("video-img");
-        var videoSource = document.getElementById("video");
-        videoSource.attr = src;
+        //var videoSource = document.getElementById("video");
+
+        var videoSource = '<source src="'+src+'" id="video">'
+        videoImg.append(videoSource)
+        //videoSource.attr = src;
         videoImg.play();
 
     var u = navigator.userAgent;
@@ -35,7 +38,6 @@ function videoCon(){
         //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         if(isAndroid){
             $('#video-img').attr('controls','controls');
-            videoSource.attr('src',src);
         }
 }
 
