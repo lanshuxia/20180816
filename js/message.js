@@ -10,8 +10,8 @@ var timeType = 1;
 //var deviceId = sessionStorage.deviceNumber; //设备编号
 var deviceId = 867223025154659;
 var checkedDevices=[]; //存放设备号
-
 $(function(){
+
     videoCon()
     getLocation()
     extracted();
@@ -23,8 +23,9 @@ function videoCon(){
     document.addEventListener("WeixinJSBridgeReady",function() {
         document.getElementById('video-img').play()
     }, false);
-    var src =  sessionStorage.getItem('videoPath')
-    $('#video-img').attr('src',src)
+    var aa = getUrlParam('src');
+    //var src =  sessionStorage.getItem('videoPath')
+    $('#video-img').attr('src',aa)
     document.getElementById('video-img').play()
     //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
@@ -34,11 +35,12 @@ function videoCon(){
         document.getElementById('video-img').play()
     }
 }
-/*function getUrlParam(name) {
+
+function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
-}*/
+}
 
 /*切换*/
 function extracted() {
