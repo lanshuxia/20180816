@@ -29,6 +29,7 @@ function videoCon(){
     alert(src)
     document.getElementById('video-img').src = src;
     alert(document.getElementById('video-img').src)
+    document.getElementById('video-img').play();
     //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
