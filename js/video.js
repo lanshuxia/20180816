@@ -54,7 +54,7 @@ function video() {
         var bases = fileSize/1024/1024;
         var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
         //console.log(objURL)
-        sessionStorage.setItem('src',objURL)
+        sessionStorage.setItem('videoPath',objURL)
         //console.log(objURL)
         //sessionStorage.videoPath = objURL;
         $('.video-img').css('display', 'none');

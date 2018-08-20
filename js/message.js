@@ -21,19 +21,17 @@ $(function(){
 
 function videoCon(){
     document.addEventListener("WeixinJSBridgeReady",function() {
-        document.getElementById('video-img').play();
+        document.getElementById('video-img').play()
     }, false);
-
-    var src = sessionStorage.getItem('src');
-    $('video-img').attr('src',src)
-    document.getElementById('video-img').play();
-    //document.getElementById('video-img').load();
+    var src =  sessionStorage.getItem(videoPath)
+    document.getElementById('video-img').src = src;
+    document.getElementById('video-img').play()
     //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if(isAndroid){
-        document.getElementById('video-img').play();
+        document.getElementById('video-img').play()
     }
 }
 /*function getUrlParam(name) {
