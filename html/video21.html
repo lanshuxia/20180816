@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="../js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<h1>JS获取文件域完整路径的方法，兼容不同浏览器</h1>
-<div id="text" style="color:#f00;"></div>
-<input type="file" id="file" />
-<input name="" type="button" value="获取" onClick="getvl();">
-</body>
+
 <script type="text/javascript">
     //FX获取文件路径方法
     function readFileFirefox(fileBrowser) {
@@ -25,7 +20,7 @@
         var file = Components.classes["@mozilla.org/file/local;1"]
                 .createInstance(Components.interfaces.nsILocalFile);
         try {
-// Back slashes for windows
+            // Back slashes for windows
             file.initWithPath( fileName.replace(/\//g, "\\\\") );
         }
         catch(e) {
@@ -37,10 +32,14 @@
             alert("File '" + fileName + "' not found.");
             return;
         }
+
+
         return file.path;
     }
+
+
     //根据不同浏览器获取路径
-    function getvl(){
+    function getvl(obj){
 //判断浏览器
         var Sys = {};
         var ua = navigator.userAgent.toLowerCase();
@@ -52,20 +51,26 @@
                                         (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
         var file_url="";
         if(Sys.ie<="6.0"){
-//ie5.5,ie6.0
-            file_url = document.getElementById("file").value;
+            //ie5.5,ie6.0
+            file_url = obj.value;
         }else if(Sys.ie>="7.0"){
-//ie7,ie8
-            var file = document.getElementById("file");
-            file.select();
+            //ie7,ie8
+            obj.select();
             file_url = document.selection.createRange().text;
         }else if(Sys.firefox){
-//fx
-//file_url = document.getElementById("file").files[0].getAsDataURL();//获取的路径为FF识别的加密字符串
-            file_url = readFileFirefox(document.getElementById("file"));
+            //fx
+            //file_url = document.getElementById("file").files[0].getAsDataURL();//获取的路径为FF识别的加密字符串
+            file_url = readFileFirefox(obj);
+        }else if(Sys.chrome){
+            file_url = obj.value;
         }
-//alert(file_url);
+        //alert(file_url);
         document.getElementById("text").innerHTML="获取文件域完整路径为："+file_url;
     }
 </script>
+<h1>JS获取文件域完整路径的方法，兼容不同浏览器</h1>
+<div id="text" style="color:#f00;"></div>
+<input type="file" id="file" onchange="getvl(this)" />
+
+</body>
 </html>

@@ -6,13 +6,45 @@
     <script src="../js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<video width="320" height="240" controls>
-    <source src="" type="video/mp4" id="video">
-</video>
+<button>点击</button>
+<input type="file" id="videoForm">
+<video src=""></video>
 </body>
 <script>
     $(function(){
-        $('#video').attr('src','../10mp4')
+        $('button').click(function(){
+            console.log($('video').attr('src'))
+            var src = $('video').attr('src');
+            sessionStorage.setItem('src',src)
+            window.location.href = 'video20.html'
+        })
     })
+    $('#videoForm').on('change',function() {//绑定videoForm文件选择事件
+//        var file = $('#videoForm')[0].files[0];
+        var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
+        var src = $('video').attr('src',objURL);
+        sessionStorage.setItem('src',src)
+        console.log(objURL)
+    })
+/*    function setBlogrollImageName(basicfile){
+        var aa = basicfile.value;
+        console.log(aa)
+        document.getElementById("blogrollimagename").value=basicfile.value;
+    }*/
+
+    //建立一個可存取到該file的url
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjcectURL != undefined) {
+            url = window.createOjcectURL(file);
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
 </script>
+
+
 </html>

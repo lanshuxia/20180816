@@ -24,32 +24,16 @@ function videoCon(){
         document.getElementById('video-img').play();
     }, false);
 
-    var src = sessionStorage.videoPath;
-    //var src = getUrlParam(src);
-    console.log(src)
-    document.getElementById('video-img').src = src;
-    console.log(document.getElementById('video-img').src)
-    document.getElementById('video-img').load();
+    var src = sessionStorage.getItem('src');
+    $('video-img').attr('src',src)
+
+    //document.getElementById('video-img').load();
     //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if(isAndroid){
         document.getElementById('video-img').play();
-        //var videoCon = $('.video-con');
-        //videoCon.css('display','none')
-        /*var video = document.querySelector('#video-img');
-        var videobox = document.querySelector('#divVideo');
-
-        //播放时改变外层包裹的宽度，使video宽度增加，
-        //相应高度也增加了,播放器控件被挤下去，配合overflow：hidden
-        //控件看不见也触摸不到了
-        function setVideoStyle(){
-            videobox.style.width = '100%';
-            video.style.width = '100%';
-        }
-        setVideoStyle();*/
-
     }
 }
 /*function getUrlParam(name) {

@@ -46,14 +46,17 @@ function weixin(){
 
 /**上传文件*/
 function video() {
+    //$(document).on('change', '#videoForm', function () {
     $('#videoForm').on('change',function(){//绑定videoForm文件选择事件
         file = $('#videoForm')[0].files[0];
 
         fileSize = this.files[0].size;
         var bases = fileSize/1024/1024;
         var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
-        console.log(objURL)
-        sessionStorage.videoPath = objURL;
+        //console.log(objURL)
+        sessionStorage.setItem('src',objURL)
+        //console.log(objURL)
+        //sessionStorage.videoPath = objURL;
         $('.video-img').css('display', 'none');
         $('#video').attr('src',objURL);
         setTimeout(function () {
