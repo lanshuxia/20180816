@@ -52,13 +52,22 @@ function video() {
 
         fileSize = this.files[0].size;
         var bases = fileSize/1024/1024;
-        var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
-        //console.log(objURL)
-        sessionStorage.setItem('videoPath',objURL)
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件
+            reader.onloadend = function (e) {
+                $('#video').attr('src',e.target.result);
+                sessionStorage.setItem('videoPath',e.target.result)
+            };
+        }
+     /*   var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径
+        console.log(objURL)
+        sessionStorage.setItem('videoPath',objURL)*/
         //console.log(objURL)
         //sessionStorage.videoPath = objURL;
         $('.video-img').css('display', 'none');
-        $('#video').attr('src',objURL);
+
         setTimeout(function () {
             if (document.getElementById('video')) {
                 duration = Math.floor(document.getElementById('video').duration);
