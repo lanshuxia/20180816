@@ -26,10 +26,10 @@ function videoCon(){
 
     var src = sessionStorage.videoPath;
     //var src = getUrlParam(src);
-    alert(src)
+    console.log(src)
     document.getElementById('video-img').src = src;
-    alert(document.getElementById('video-img').src)
-    document.getElementById('video-img').play();
+    console.log(document.getElementById('video-img').src)
+    document.getElementById('video-img').load();
     //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
