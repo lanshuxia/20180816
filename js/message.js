@@ -32,7 +32,9 @@ function videoCon(){
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if(isAndroid){
-        var video = document.querySelector('#video-img');
+        var videoCon = $('.video-con');
+        videoCon.css('display','none')
+        /*var video = document.querySelector('#video-img');
         var videobox = document.querySelector('#divVideo');
 
         //播放时改变外层包裹的宽度，使video宽度增加，
@@ -42,7 +44,8 @@ function videoCon(){
             videobox.style.width = '100%';
             video.style.width = '100%';
         }
-        setVideoStyle()
+        setVideoStyle();*/
+
     }
 }
 /*function getUrlParam(name) {
