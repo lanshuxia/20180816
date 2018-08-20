@@ -21,19 +21,22 @@ $(function(){
 
 function videoCon(){
     document.addEventListener("WeixinJSBridgeReady",function() {
-        document.getElementById('video-img').play()
+        document.getElementById('video-img').play();
     }, false);
+
     var src = sessionStorage.videoPath;
     //var src = getUrlParam(src);
-
+    alert(src)
     document.getElementById('video-img').src = src;
+    alert(document.getElementById('video-img').src)
     //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     //var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if(isAndroid){
-        var videoCon = $('.video-con');
-        videoCon.css('display','none')
+        document.getElementById('video-img').play();
+        //var videoCon = $('.video-con');
+        //videoCon.css('display','none')
         /*var video = document.querySelector('#video-img');
         var videobox = document.querySelector('#divVideo');
 
