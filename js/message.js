@@ -26,7 +26,7 @@ function videoCon(){
 
     var src = sessionStorage.getItem('src');
     $('video-img').attr('src',src)
-
+    document.getElementById('video-img').play();
     //document.getElementById('video-img').load();
     //$('#video-img').attr('src',src);
     var u = navigator.userAgent;
