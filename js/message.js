@@ -23,7 +23,7 @@ function videoCon(){
     document.addEventListener("WeixinJSBridgeReady",function() {
         document.getElementById('video-img').play()
     }, false);
-    var src =  sessionStorage.getItem(videoPath)
+    var src =  sessionStorage.getItem('videoPath')
     document.getElementById('video-img').src = src;
     document.getElementById('video-img').play()
     //$('#video-img').attr('src',src);
