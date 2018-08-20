@@ -92,6 +92,7 @@ video {
     height: 100%;
     display: block;
     margin:0 auto;
+    object-fit: fill;
 }
 /*描述*/
 .tab-describe{
